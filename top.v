@@ -18,7 +18,7 @@ module top #(
         input [2:0] mmax,
         input [31:0] total_outputs,
         output reg CI_precoded,
-	    output [ANTENNAS*DATA_WIDTH-1:0] tr_out
+	output [ANTENNAS*DATA_WIDTH-1:0] tr_out
     );
     
     wire [DATA_WIDTH-1:0] row_CICS_1, col_CICS_1, gradient_index_CICS_1;
@@ -190,7 +190,7 @@ module top #(
         .chance(chance),
         .clear_output(rst | reset_output_1 | reset_output_2),
         .output_calculate(output_selector & !CI_precoded),
-	    .tr_out(tr_out),
+	.tr_out(tr_out),
         .entire_column_CICS_1(entire_column_CICS_1),
         .entire_column_CICS_2(entire_column_CICS_2),
         .entire_column_GBCD_1(entire_column_GBCD_1),
@@ -529,7 +529,7 @@ module input_storage #(
         input chance,
         input output_calculate,
         input clear_output,
-	    output [ANTENNAS*DATA_WIDTH-1:0] tr_out,
+	output [ANTENNAS*DATA_WIDTH-1:0] tr_out,
         output [DATA_WIDTH*MATRIX_SIZE-1:0] entire_column_CICS_1,
         output [DATA_WIDTH*MATRIX_SIZE-1:0] entire_column_CICS_2,
         output [DATA_WIDTH*MATRIX_SIZE-1:0] entire_column_GBCD_1,
